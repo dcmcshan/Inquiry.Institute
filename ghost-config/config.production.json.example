@@ -1,0 +1,38 @@
+{
+  "url": "https://inquirer.inquiry.institute",
+  "server": {
+    "port": 2368,
+    "host": "0.0.0.0"
+  },
+  "database": {
+    "client": "mysql",
+    "connection": {
+      "host": "${MYSQL_HOST}",
+      "port": ${MYSQL_PORT},
+      "user": "${MYSQL_USER}",
+      "password": "${MYSQL_PASSWORD}",
+      "database": "${MYSQL_DATABASE}"
+    }
+  },
+  "mail": {
+    "transport": "SMTP",
+    "options": {
+      "host": "${SMTP_HOST}",
+      "port": ${SMTP_PORT},
+      "auth": {
+        "user": "${SMTP_USER}",
+        "pass": "${SMTP_PASSWORD}"
+      }
+    }
+  },
+  "logging": {
+    "transports": [
+      "file",
+      "stdout"
+    ]
+  },
+  "process": "systemd",
+  "paths": {
+    "contentPath": "/var/lib/ghost/content"
+  }
+}

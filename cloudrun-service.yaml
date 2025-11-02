@@ -1,0 +1,56 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: ghost
+  annotations:
+    run.googleapis.com/ingress: all
+    run.googleapis.com/ingress-status: all
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/maxScale: "10"
+        autoscaling.knative.dev/minScale: "1"
+        run.googleapis.com/cloudsql-instances: PROJECT_ID:REGION:INSTANCE_NAME
+    spec:
+      containerConcurrency: 80
+      timeoutSeconds: 300
+      serviceAccountName: ghost-sa@PROJECT_ID.iam.gserviceaccount.com
+      containers:
+      - image: gcr.io/PROJECT_ID/ghost:latest
+        ports:
+        - name: http1
+          containerPort: 2368
+        env:
+        - name: URL
+          value: https://inquirer.inquiry.institute
+        - name: NODE_ENV
+          value: production
+        - name: database__client
+          value: mysql
+        - name: database__connection__host
+          value: 127.0.0.1
+        - name: database__connection__port
+          value: "3306"
+        - name: database__connection__user
+          valueFrom:
+            secretKeyRef:
+              name: ghost-db-user
+              key: username
+        - name: database__connection__password
+          valueFrom:
+            secretKeyRef:
+              name: ghost-db-password
+              key: password
+        - name: database__connection__database
+          value: ghost
+        resources:
+          limits:
+            cpu: "2"
+            memory: 2Gi
+          requests:
+            cpu: "1"
+            memory: 1Gi
+  traffic:
+  - percent: 100
+    latestRevision: true

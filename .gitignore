@@ -1,0 +1,7 @@
+.env
+.env.local
+*.log
+ghost-content/
+mysql-data/
+.DS_Store
+node_modules/

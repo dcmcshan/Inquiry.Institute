@@ -1,0 +1,11 @@
+.env
+.env.local
+*.log
+.DS_Store
+node_modules/
+README.md
+.github/
+.git/
+.gitignore
+mysql-data/
+ghost-content/

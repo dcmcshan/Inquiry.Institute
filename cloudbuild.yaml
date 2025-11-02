@@ -1,0 +1,35 @@
+steps:
+  # Build the Ghost container image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/ghost:latest', '.']
+
+  # Push the container image to Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/ghost:latest']
+
+  # Deploy to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'ghost'
+      - '--image'
+      - 'gcr.io/$PROJECT_ID/ghost:latest'
+      - '--region'
+      - 'us-central1'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'
+      - '--set-env-vars'
+      - 'URL=https://inquirer.inquiry.institute,NODE_ENV=production'
+      - '--add-cloudsql-instances'
+      - '$PROJECT_ID:us-central1:ghost-db'
+      - '--port'
+      - '2368'
+
+images:
+  - 'gcr.io/$PROJECT_ID/ghost:latest'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
