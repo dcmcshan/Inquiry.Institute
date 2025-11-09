@@ -33,7 +33,7 @@ echo "???  Building and deploying with Cloud Build..."
 gcloud builds submit --config cloudbuild.yaml
 
 echo "? Deployment complete!"
-echo "?? Your Ghost site should be available at: https://inquirer.inquiry.institute"
+echo "?? Your Ghost site should be available at: https://inquirer.inquiry.institute/villa.diodati/"
 echo ""
 echo "Next steps:"
 echo "1. Set up Cloud SQL instance if not already done:"

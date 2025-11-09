@@ -4,7 +4,7 @@ This repository contains the configuration and deployment files for running Ghos
 
 ## Overview
 
-This project deploys Ghost CMS to `inquirer.inquiry.institute` using:
+This project deploys Ghost CMS to `inquirer.inquiry.institute/villa.diodati/` using:
 - **Docker** for containerization
 - **Google Cloud Run** or **App Engine** for hosting
 - **Cloud SQL (MySQL)** for the database
@@ -103,7 +103,7 @@ This project deploys Ghost CMS to `inquirer.inquiry.institute` using:
 
 Key environment variables to configure:
 
-- `URL`: Your Ghost site URL (https://inquirer.inquiry.institute)
+- `URL`: Your Ghost site URL (https://inquirer.inquiry.institute/villa.diodati/)
 - `MYSQL_HOST`: Database host
 - `MYSQL_DATABASE`: Database name
 - `MYSQL_USER`: Database user
