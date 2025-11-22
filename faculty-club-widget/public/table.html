@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faculty Club · Table</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <a class="back-link" href="/">← All tables</a>
+
+      <header class="hero table-hero">
+        <div>
+          <p class="eyebrow" id="tableNumberLabel">Table —</p>
+          <h1 id="tableTitle">Loading table…</h1>
+          <p class="lede" id="tableSummary">Retrieving table details.</p>
+        </div>
+        <div class="hero-status table-meta">
+          <div class="status-pill stacked">
+            <span class="label">Seats</span>
+            <span class="table-seat-count" id="tableSeatCount">—</span>
+            <span class="muted mini-label">Max participants</span>
+          </div>
+          <span class="status-pill muted" id="latencyStatus">Idle</span>
+        </div>
+      </header>
+
+      <main class="layout table-layout">
+        <section class="tables-panel table-details">
+          <article class="table-card">
+            <h3 class="table-title">Seat plan</h3>
+            <p class="muted">Each seat equals one participant slot.</p>
+            <p class="table-seat-count large" id="sidebarSeatCount">—</p>
+          </article>
+          <article class="table-card">
+            <h3 class="table-title">Participants</h3>
+            <div class="chips" id="participantsList"></div>
+          </article>
+          <article class="table-card">
+            <h3 class="table-title">Ambience</h3>
+            <p class="table-summary" id="tableVibe"></p>
+          </article>
+        </section>
+
+        <section class="conversation-panel">
+          <div class="panel-header">
+            <div>
+              <p class="panel-eyebrow" id="activeTableTitle">Table details</p>
+              <h2 id="activeTableTheme">Loading theme…</h2>
+            </div>
+            <button id="generateRound" class="primary" disabled>
+              Suggest topic &amp; responses
+            </button>
+          </div>
+          <p class="panel-summary" id="activeTableSummary"></p>
+          <div class="topic-banner" id="topicBanner">
+            <span class="label">Topic</span>
+            <p id="topicText">—</p>
+          </div>
+
+          <div class="conversation" id="conversationStream">
+            <div class="empty-state">
+              <p>No conversation yet.</p>
+              <p class="muted">When you run the widget the faculty replies will render here with a typewriter reveal.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <template id="messageTemplate">
+      <div class="message-card">
+        <div class="message-meta">
+          <div>
+            <p class="speaker-name"></p>
+            <p class="speaker-handle"></p>
+          </div>
+          <span class="timestamp"></span>
+        </div>
+        <div class="thinking-line">Thinking…</div>
+        <p class="message-body"></p>
+      </div>
+    </template>
+
+    <script type="module" src="/table.js"></script>
+  </body>
+</html>
