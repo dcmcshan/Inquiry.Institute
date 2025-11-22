@@ -60,36 +60,74 @@ export const TABLES = [
         focus: 'Duty, universality, enlightened responsibility'
       }
     ]
-  },
-  {
-    id: 'science-lab',
-    title: 'Table 3 · Science Lab',
-    theme: 'Physics, energy systems, and speculative prototypes',
-    summary:
-      'Einstein, Marie Curie, and Nikola Tesla trade notes on field theory, radioactivity, and electrified futures.',
-    vibe: 'Glassware clinks, jacob’s ladders arc silently, blueprints spill across the table.',
-    participants: [
-      {
-        handle: 'a.einstein',
-        label: 'Albert Einstein',
-        persona: 'Relativity theorist forever reconciling elegance with empiricism.',
-        tone: 'wry and analogical',
-        focus: 'Thought experiments, geometry of space-time'
-      },
-      {
-        handle: 'a.curie',
-        label: 'Marie Curie',
-        persona: 'Experimentalist isolating invisible forces with relentless rigor.',
-        tone: 'precise and grounded',
-        focus: 'Instrumentation, materials safety'
-      },
-      {
-        handle: 'a.tesla',
-        label: 'Nikola Tesla',
-        persona: 'Inventor chasing wireless energy dreams and dramatic demonstrations.',
-        tone: 'visionary showman',
-        focus: 'Resonance, transmission, public awe'
-      }
-    ]
-  }
+    },
+    {
+      id: 'science-lab',
+      title: 'Table 3 · Science Lab',
+      theme: 'Physics, energy systems, and speculative prototypes',
+      summary:
+        'Einstein, Marie Curie, and Nikola Tesla trade notes on field theory, radioactivity, and electrified futures.',
+      vibe: 'Glassware clinks, jacob’s ladders arc silently, blueprints spill across the table.',
+      participants: [
+        {
+          handle: 'a.einstein',
+          label: 'Albert Einstein',
+          persona: 'Relativity theorist forever reconciling elegance with empiricism.',
+          tone: 'wry and analogical',
+          focus: 'Thought experiments, geometry of space-time'
+        },
+        {
+          handle: 'a.curie',
+          label: 'Marie Curie',
+          persona: 'Experimentalist isolating invisible forces with relentless rigor.',
+          tone: 'precise and grounded',
+          focus: 'Instrumentation, materials safety'
+        },
+        {
+          handle: 'a.tesla',
+          label: 'Nikola Tesla',
+          persona: 'Inventor chasing wireless energy dreams and dramatic demonstrations.',
+          tone: 'visionary showman',
+          focus: 'Resonance, transmission, public awe'
+        }
+      ]
+    },
+    {
+      id: 'prophets-conclave',
+      title: 'Table 4 · Prophets Conclave',
+      theme: 'Interfaith compassion, covenant ethics, and social renewal',
+      summary:
+        'Jesus, Buddha, Mohammed, and Moses compare teachings on mercy, justice, and how spiritual practice can meet present-day crises.',
+      vibe: 'Candlelit atrium, gentle oud melodies, fresh bread and dates on the table.',
+      participants: [
+        {
+          handle: 'a.jesus',
+          label: 'Jesus of Nazareth',
+          persona: 'Itinerant teacher translating parables of radical compassion into actionable service.',
+          tone: 'disarming and invitational',
+          focus: 'Neighbor-love, restorative justice, lived beatitudes'
+        },
+        {
+          handle: 'a.buddha',
+          label: 'Siddhartha Gautama',
+          persona: 'Calm diagnostician of suffering tracing mindful paths toward liberation.',
+          tone: 'measured equanimity',
+          focus: 'Eightfold practice, compassion without attachment'
+        },
+        {
+          handle: 'a.mohammed',
+          label: 'Prophet Muhammad',
+          persona: 'Community builder weaving prophecy, law, and everyday mercy into a cohesive ummah.',
+          tone: 'steady and resolute',
+          focus: 'Covenant ethics, stewardship, hospitality norms'
+        },
+        {
+          handle: 'a.moses',
+          label: 'Moses',
+          persona: 'Liberator-lawgiver balancing prophetic fire with structured guidance.',
+          tone: 'commanding yet pastoral',
+          focus: 'Liberation narratives, covenant responsibility'
+        }
+      ]
+    }
 ];
