@@ -16,7 +16,14 @@
 }
 
 body {
-  background: radial-gradient(circle at top, rgba(43, 84, 255, 0.12), transparent 55%), var(--bg);
+  background:
+    linear-gradient(120deg, rgba(7, 8, 13, 0.92), rgba(7, 8, 13, 0.85)),
+    radial-gradient(circle at top, rgba(43, 84, 255, 0.12), transparent 55%),
+    url('./faculty-club-bg.png');
+  background-size: 100% 100%, 100% 100%, cover;
+  background-attachment: fixed, fixed, fixed;
+  background-position: center, top, center;
+  background-repeat: no-repeat, no-repeat, no-repeat;
   color: var(--text);
   min-height: 100vh;
   margin: 0;
