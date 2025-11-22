@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inquiry Faculty Club</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Inquiry Institute · Faculty Club</p>
+          <h1>Salon tables, simulated in real-time</h1>
+          <p class="lede">
+            Each table is a living conversation. Tap a table, let OpenRouter’s <code>got-oss-120b</code> channel the
+            listed faculty, and watch responses arrive with human pacing.
+          </p>
+        </div>
+        <div class="hero-status">
+          <span class="status-pill" id="modelStatus">Model: got-oss-120b</span>
+          <span class="status-pill muted" id="latencyStatus">Idle</span>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="tables-panel" id="tablesPanel"></section>
+
+        <section class="conversation-panel">
+          <div class="panel-header">
+            <div>
+              <p class="panel-eyebrow" id="activeTableTitle">Select a table</p>
+              <h2 id="activeTableTheme">Choose a table to load its context.</h2>
+            </div>
+            <button id="generateRound" class="primary" disabled>
+              Suggest topic &amp; responses
+            </button>
+          </div>
+          <p class="panel-summary" id="activeTableSummary"></p>
+          <p class="panel-vibe" id="activeTableVibe"></p>
+          <div class="topic-banner" id="topicBanner">
+            <span class="label">Topic</span>
+            <p id="topicText">—</p>
+          </div>
+
+          <div class="conversation" id="conversationStream">
+            <div class="empty-state">
+              <p>No conversation yet.</p>
+              <p class="muted">When you run the widget the faculty replies will render here with a typewriter reveal.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <template id="messageTemplate">
+      <div class="message-card">
+        <div class="message-meta">
+          <div>
+            <p class="speaker-name"></p>
+            <p class="speaker-handle"></p>
+          </div>
+          <span class="timestamp"></span>
+        </div>
+        <div class="thinking-line">Thinking…</div>
+        <p class="message-body"></p>
+      </div>
+    </template>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

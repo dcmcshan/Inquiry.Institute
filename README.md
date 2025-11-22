@@ -204,6 +204,27 @@ docker-compose logs -f ghost
 - Verify all required files are present
 - Review Cloud Build logs: `gcloud builds list`
 
+## Faculty Club Widget (OpenRouter chat)
+
+The `faculty-club-widget/` directory contains a lightweight Express + vanilla JS app that replaces the old Rocket.Chat links on [`inquiry.institute/faculty.club`](https://inquiry.institute/faculty.club) with an in-page, multi-participant simulation powered by OpenRouter’s `got-oss-120b`.
+
+### Features
+- Streams each participant’s reply with per-speaker “thinking” pauses and a typewriter reveal to mimic real conversation pacing
+- Builds prompts from table metadata, persona briefs, and the running chat history so every round feels coherent
+- Requests JSON from OpenRouter so the UI knows the suggested topic, delays, and speaking speeds per persona
+
+### Running locally
+```bash
+cd faculty-club-widget
+cp .env.example .env             # add your OpenRouter API key
+npm install
+npm run dev                      # serves http://localhost:4173
+```
+
+Set `OPENROUTER_REFERER` to the production URL so the request is accepted by OpenRouter, and keep your API key server-side only.
+
+To embed the widget in the existing Next.js page, deploy the Express app (e.g., on Cloud Run) and iframe or proxy `/api/generate` + the static assets into the Faculty Club route.
+
 ## Resources
 
 - [Ghost Docker Documentation](https://docs.ghost.org/install/docker)
