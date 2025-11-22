@@ -1,6 +1,8 @@
 export const TABLES = [
   {
     id: 'doors-of-perception',
+    number: 1,
+    seats: 3,
     title: 'Table 1 · The Doors of Perception',
     theme: 'Expanded consciousness, psychedelics, and creative risk-taking',
     summary:
@@ -32,6 +34,8 @@ export const TABLES = [
   },
   {
     id: 'philosophy-corner',
+    number: 2,
+    seats: 3,
     title: 'Table 2 · Philosophy Corner',
     theme: 'Classics colliding with modern moral paradoxes',
     summary:
@@ -63,6 +67,8 @@ export const TABLES = [
   },
   {
     id: 'science-lab',
+    number: 3,
+    seats: 3,
     title: 'Table 3 · Science Lab',
     theme: 'Physics, energy systems, and speculative prototypes',
     summary:

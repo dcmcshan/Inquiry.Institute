@@ -23,6 +23,16 @@ body {
   padding: 0 1.5rem 2rem;
 }
 
+.back-link {
+  display: inline-flex;
+  gap: 0.25rem;
+  align-items: center;
+  margin-top: 1rem;
+  color: var(--highlight);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
 .page {
   max-width: 1200px;
   margin: 0 auto;
@@ -33,6 +43,15 @@ body {
   justify-content: space-between;
   gap: 2rem;
   padding: 3rem 0 1.5rem;
+}
+
+.hero-landing {
+  align-items: center;
+}
+
+.table-hero {
+  flex-wrap: wrap;
+  gap: 1.5rem;
 }
 
 .eyebrow {
@@ -60,6 +79,10 @@ h1 {
   align-items: flex-start;
 }
 
+.table-meta {
+  flex-wrap: wrap;
+}
+
 .status-pill {
   border: 1px solid var(--outline);
   border-radius: 999px;
@@ -71,16 +94,47 @@ h1 {
   color: var(--muted);
 }
 
+.status-pill.stacked {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  border-radius: 1rem;
+  min-width: 160px;
+}
+
+.mini-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
+
 .layout {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 1.25rem;
 }
 
+.table-layout {
+  align-items: flex-start;
+}
+
 .tables-panel {
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
+}
+
+.tables-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  padding-bottom: 3rem;
+}
+
+.table-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 .table-card {
@@ -90,6 +144,14 @@ h1 {
   padding: 1.25rem;
   cursor: pointer;
   transition: border 0.2s ease, transform 0.2s ease;
+}
+
+.table-card.simple-card {
+  cursor: pointer;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .table-card.active {
@@ -105,6 +167,27 @@ h1 {
 .table-title {
   margin: 0;
   font-weight: 600;
+}
+
+.table-number {
+  margin: 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.table-seat-count {
+  margin: 0.4rem 0 0;
+  font-size: clamp(1.5rem, 2.4vw, 2.2rem);
+}
+
+.table-seat-count.large {
+  font-size: clamp(2.2rem, 3vw, 2.8rem);
+}
+
+.seat-caption {
+  margin-top: 0.2rem;
 }
 
 .table-summary {
@@ -299,6 +382,10 @@ h1 {
 @media (max-width: 1000px) {
   .layout {
     grid-template-columns: 1fr;
+  }
+
+  .table-hero {
+    flex-direction: column;
   }
 
   .hero {
