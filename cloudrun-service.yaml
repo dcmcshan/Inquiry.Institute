@@ -23,7 +23,9 @@ spec:
           containerPort: 2368
         env:
         - name: URL
-          value: https://inquirer.inquiry.institute
+          value: https://inquirer.inquiry.institute/villa.diodati/
+        - name: admin__url
+          value: https://inquirer.inquiry.institute/villa.diodati/ghost/
         - name: NODE_ENV
           value: production
         - name: database__client
@@ -36,12 +38,12 @@ spec:
           valueFrom:
             secretKeyRef:
               name: ghost-db-user
-              key: username
+              key: latest
         - name: database__connection__password
           valueFrom:
             secretKeyRef:
               name: ghost-db-password
-              key: password
+              key: latest
         - name: database__connection__database
           value: ghost
         resources:

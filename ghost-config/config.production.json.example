@@ -1,5 +1,8 @@
 {
-  "url": "https://inquirer.inquiry.institute",
+  "url": "https://inquirer.inquiry.institute/villa.diodati/",
+  "admin": {
+    "url": "https://inquirer.inquiry.institute/villa.diodati/ghost/"
+  },
   "server": {
     "port": 2368,
     "host": "0.0.0.0"
